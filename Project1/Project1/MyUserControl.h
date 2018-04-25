@@ -267,12 +267,12 @@ namespace Project1 {
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		P1->Type = "Mag";
+		P1->type = "Mag";
 		P1->maxhealth = 100;
-		P1->demage= 10;
+		P1->damage= 10;
 		P1->picture = "Mag.jpg";
 		HpLabel->Text = (P1->maxhealth).ToString();
-		DmgLabel->Text = (P1->demage).ToString();
+		DmgLabel->Text = (P1->damage).ToString();
 		pictureBox1->Image = Image::FromFile(P1->picture);
 		int a = 13;
 	}
@@ -284,24 +284,25 @@ private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void MyUserControl_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void AssasinButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	P1->Type = "Assasin";
+	P1->type = "Assasin";
 	P1->maxhealth = 150;
-	P1->demage = 30;
+	P1->damage = 30;
 	P1->picture = "Assasyn.jpg";
 	HpLabel->Text = (P1->maxhealth).ToString();
-	DmgLabel->Text = (P1->demage).ToString();
+	DmgLabel->Text = (P1->damage).ToString();
 	pictureBox1->Image = Image::FromFile(P1->picture);
 }
+
 private: System::Void KnightButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	P1->Type = "Knight";
+	P1->type = "Knight";
 	P1->maxhealth = 200;
-	P1->demage = 25;
+	P1->damage = 25;
 	P1->picture = "rycerz.jpg";
 	HpLabel->Text = (P1->maxhealth).ToString();
-	DmgLabel->Text = (P1->demage).ToString();
-	pictureBox1->Image = Image::FromFile(P1->picture);
-		
+	DmgLabel->Text = (P1->damage).ToString();
+	pictureBox1->Image = Image::FromFile(P1->picture);	
 }
+
 private: System::Void CreateButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	P1->name = textBox1->Text;
 	//Project1::MyForm::zmiana();

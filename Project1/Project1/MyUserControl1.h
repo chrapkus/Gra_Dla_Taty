@@ -186,9 +186,6 @@ namespace Project1 {
 		//private: Project1::MyUserControl::Postac::P1;
 		
 	private: System::Void progressBar1_Click(System::Object^  sender, System::EventArgs^  e) {
-		extern int a;
-
-		label1->Text = (a).ToString();
 	}
 private: System::Void MyUserControl1_Load(System::Object^  sender, System::EventArgs^  e) {
 }
