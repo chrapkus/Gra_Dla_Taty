@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-ref class Postac//tata to lamuw 2
+ref class Postac//tata to lamuw 2fgfdgsdgdg
 {
 public://tata to lamus
 	System::String^ name;
