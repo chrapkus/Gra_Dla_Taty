@@ -3,7 +3,7 @@
 
 ref class Postac
 {
-public:
+public://tata to lamus
 	System::String^ name;
 	System::String^ picture;
 	System::String^ type;
