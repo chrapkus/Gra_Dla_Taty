@@ -65,6 +65,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  KnightButton;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::Button^  CreateButton;
+	private: System::Windows::Forms::Button^  button1;
 
 	protected:
 
@@ -97,6 +98,7 @@ namespace Project1 {
 			this->KnightButton = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->CreateButton = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -234,10 +236,21 @@ namespace Project1 {
 			this->CreateButton->UseVisualStyleBackColor = true;
 			this->CreateButton->Click += gcnew System::EventHandler(this, &MyUserControl::CreateButton_Click);
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(463, 123);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(189, 107);
+			this->button1->TabIndex = 10;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyUserControl::button1_Click);
+			// 
 			// MyUserControl
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->CreateButton);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->KnightButton);
@@ -304,8 +317,14 @@ private: System::Void KnightButton_Click(System::Object^  sender, System::EventA
 }
 
 private: System::Void CreateButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (textBox1->Text == "") {
+		MessageBox::Show("Nazwa nie mo¿e byæ pusta!");
+	}
 	P1->name = textBox1->Text;
 	//Project1::MyForm::zmiana();
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show(Postac::getPostac()->name);
 }
 };
 }

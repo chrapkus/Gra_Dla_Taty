@@ -19,9 +19,7 @@ namespace Project1 {
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			
 		}
 
 	protected:
@@ -44,6 +42,7 @@ namespace Project1 {
 	private: Project1::MyUserControl1 ^ userControl1;
 	protected:
 
+	
 	private:
 		/// <summary>
 		/// Required designer variable.

@@ -48,6 +48,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Panel^  panel4;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Button^  button1;
 	protected:
 
 	private:
@@ -73,6 +74,7 @@ namespace Project1 {
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
@@ -158,10 +160,21 @@ namespace Project1 {
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"label3";
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(399, 362);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(184, 40);
+			this->button1->TabIndex = 7;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyUserControl1::button1_Click);
+			// 
 			// MyUserControl1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->panel4);
@@ -199,6 +212,9 @@ private: System::Void panel2_Paint(System::Object^  sender, System::Windows::For
 private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
 	
 	//pictureBox1->Image = Image::FromFile(P1->picture);
+}
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show(Postac::getPostac()->name);
 }
 };
 }
