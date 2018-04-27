@@ -135,12 +135,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Gra.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyUserControl.cpp" />
     <ClCompile Include="MyUserControl1.cpp" />
     <ClCompile Include="Postac.cpp" />
+    <ClCompile Include="Rycerz.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Gra.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -151,6 +154,7 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="Postac.h" />
+    <ClInclude Include="Rycerz.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">

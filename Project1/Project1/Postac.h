@@ -1,9 +1,22 @@
 #pragma once
 #include <string>
+#include <cliext/set>  
+#include <cliext/map>
 
-ref class Postac//tata to lamuw 2fgfdgsdgdg
+using namespace cliext;
+using namespace System;
+
+enum TypPostaci
 {
-public://Szymon to lamus
+	POSTAC_RYCERZ = 0,
+	POSTAC_PIES = 1,
+	POSTAC_KSIADZ = 2,
+	POSTAC_BABAJAGA = 3
+};
+
+ref class Postac
+{
+public:
 	System::String^ name;
 	System::String^ picture;
 	System::String^ type;
@@ -11,11 +24,16 @@ public://Szymon to lamus
 	int maxhealth;
 	int currenthealth;
 
-//globalna postac
-private: static Postac ^ __POSTAC;
+	// test set<String^>^ emplSet = gcnew set<String^>();
+
+public : static Postac ^ __POSTAC;
+		
+	// test map<String^, int>^ mapOfWords = gcnew map<String^, int>();
+	static map<String^, Postac^>^  Postacie = gcnew map<String^, Postac^>();
 
 public:
-	Postac(System::String^ name, System::String^ picture, System::String^ type, int damage, int maxhealth, int currenthealth)
+	Postac() {}
+	Postac(String^ name, String^ picture, String^ type, int damage, int maxhealth, int currenthealth)
 
 	{
 		this->name = name;
@@ -26,15 +44,27 @@ public:
 		this->currenthealth = currenthealth;
 	}
 
+public: String^ kimJestem() {
+	return gcnew String("Jestem zwyk³¹ postaci¹.");
+}
+
+/*
 public: static Postac ^ getPostac() {
 	if (__POSTAC == nullptr) {
 		__POSTAC = gcnew Postac("__POSTAC", "__POSTAC", "__postac.jpg", 1, 1, 1);
 	}
-		return __POSTAC;
-	
+	return __POSTAC;
+}
+*/
 
+
+
+public: static void dodajPostaæ(String^ key, Postac^ postac) {
+	Postacie[key] = postac;
+}
+
+public: static Postac^ podajPostaæ(String^ key) {
+	return Postacie[key];
 }
 
 };
-
-

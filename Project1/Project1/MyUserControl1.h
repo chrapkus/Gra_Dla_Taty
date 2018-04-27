@@ -214,7 +214,7 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 	//pictureBox1->Image = Image::FromFile(P1->picture);
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show(Postac::getPostac()->name);
+	//MessageBox::Show(Postac::getPostac()->kimJestem());
 }
 };
 }

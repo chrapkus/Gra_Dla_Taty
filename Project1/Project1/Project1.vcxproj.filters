@@ -27,6 +27,12 @@
     <ClCompile Include="Postac.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rycerz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -39,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Postac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rycerz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gra.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
