@@ -8,7 +8,7 @@ public:
 	Gra();
 
 	static String^ gameId;
-	static String^ gameName;
+	public: static String^ gameName;
 	static Gra ^ __GRA;
 	
 public: static String^ newGame(String^ gameNameP) {

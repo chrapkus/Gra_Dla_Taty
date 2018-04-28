@@ -1,13 +1,11 @@
 #pragma once
 #include <string>
-#include <cliext/set>  
 #include <cliext/map>
 
 using namespace cliext;
 using namespace System;
 
-enum TypPostaci
-{
+enum TypPostaci{
 	POSTAC_RYCERZ = 0,
 	POSTAC_PIES = 1,
 	POSTAC_KSIADZ = 2,
@@ -24,11 +22,7 @@ public:
 	int maxhealth;
 	int currenthealth;
 
-	// test set<String^>^ emplSet = gcnew set<String^>();
-
-public : static Postac ^ __POSTAC;
-		
-	// test map<String^, int>^ mapOfWords = gcnew map<String^, int>();
+	// test set<String^>^ emplSet = gcnew set<String^>();		
 	static map<String^, Postac^>^  Postacie = gcnew map<String^, Postac^>();
 
 public:
@@ -44,7 +38,7 @@ public:
 		this->currenthealth = currenthealth;
 	}
 
-public: String^ kimJestem() {
+public: virtual String^ kimJestem() {
 	return gcnew String("Jestem zwyk³¹ postaci¹.");
 }
 
@@ -56,8 +50,6 @@ public: static Postac ^ getPostac() {
 	return __POSTAC;
 }
 */
-
-
 
 public: static void dodajPostaæ(String^ key, Postac^ postac) {
 	Postacie[key] = postac;

@@ -1,5 +1,6 @@
 #pragma once
 #include "Postac.h"
+#include "Rycerz.h"
 #include "Gra.h"
 
 using namespace System;
@@ -69,9 +70,10 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::TextBox^  texBox2;
+
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::TextBox^  textBox2;
 
 	protected:
 
@@ -107,9 +109,9 @@ namespace Project1 {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->texBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -279,14 +281,6 @@ namespace Project1 {
 			this->label3->Text = L"Game";
 			this->label3->UseMnemonic = false;
 			// 
-			// texBox2
-			// 
-			this->texBox2->Enabled = false;
-			this->texBox2->Location = System::Drawing::Point(103, 63);
-			this->texBox2->Name = L"texBox2";
-			this->texBox2->Size = System::Drawing::Size(159, 20);
-			this->texBox2->TabIndex = 14;
-			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
@@ -306,12 +300,20 @@ namespace Project1 {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyUserControl::button3_Click);
 			// 
+			// textBox2
+			// 
+			this->textBox2->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBox2->Location = System::Drawing::Point(103, 63);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(161, 20);
+			this->textBox2->TabIndex = 16;
+			// 
 			// MyUserControl
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->texBox2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button2);
@@ -345,14 +347,13 @@ namespace Project1 {
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		P1->type = "Mag";
-		P1->maxhealth = 100;
-		P1->damage= 10;
-		P1->picture = "Mag.jpg";
+		String^ nameOfCharacter = textBox1->Text;
+		Postac^ p1 = gcnew Rycerz(nameOfCharacter, "rycerzePicture.jpg", 100, 100, 50);
 		HpLabel->Text = (P1->maxhealth).ToString();
 		DmgLabel->Text = (P1->damage).ToString();
-		pictureBox1->Image = Image::FromFile(P1->picture);
-		int a = 13;
+		//pictureBox1->Image = Image::FromFile(P1->picture);
+		Postac::dodajPostaæ(nameOfCharacter, p1);
+
 	}
 		
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -389,7 +390,7 @@ private: System::Void CreateButton_Click(System::Object^  sender, System::EventA
 	//Project1::MyForm::zmiana();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	//MessageBox::Show(Postac::getPostac()->kimJestem());
+	MessageBox::Show(Postac::podajPostaæ( textBox1->Text)->kimJestem());
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	long long currentTicks = System::DateTime::Now.Ticks;
@@ -397,8 +398,8 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 }
 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	Gra::newGame(texBox2->Text);
-	label2->Text = "Game: " + texBox2->Text;
+	Gra::newGame(textBox2->Text);
+	label3->Text = "Game: " + textBox2->Text;
 }
 };
 }
