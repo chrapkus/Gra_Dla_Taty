@@ -17,10 +17,21 @@ namespace Project1 {
 	/// </summary>
 	public ref class MyUserControl1 : public System::Windows::Forms::UserControl
 	{
+
+		void ViewChangeHandler(int numerOkna) {
+			if (numerOkna == 1)
+			{
+				this->BringToFront();
+			}
+		}
+
 	public:
 		MyUserControl1(void)
 		{
 			InitializeComponent();
+
+			Gra::OnViewChange += gcnew  ViewChangeEvent(this, &MyUserControl1::ViewChangeHandler);
+
 			//
 			//TODO: Add the constructor code here
 			//
@@ -215,6 +226,7 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	//MessageBox::Show(Postac::getPostac()->kimJestem());
+	Gra::FireViewChangeEvent(0);
 }
 };
 }

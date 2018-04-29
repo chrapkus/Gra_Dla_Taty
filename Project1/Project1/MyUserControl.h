@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Postac.h"
 #include "Rycerz.h"
 #include "Gra.h"
@@ -19,10 +20,18 @@ namespace Project1 {
 	public ref class MyUserControl : public System::Windows::Forms::UserControl
 	{
 	public:
+
+		void ViewChangeHandler(int numerOkna) {
+			if (numerOkna == 0)
+			{
+				this->BringToFront();
+			}
+		}
+
 		MyUserControl(void)
 		{
 			InitializeComponent();
-			
+			Gra::OnViewChange += gcnew  ViewChangeEvent(this, &MyUserControl::ViewChangeHandler);
 			//
 			//TODO: Add the constructor code here
 			//
@@ -119,9 +128,10 @@ namespace Project1 {
 			// 
 			this->MagButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->MagButton->Location = System::Drawing::Point(391, 246);
+			this->MagButton->Location = System::Drawing::Point(586, 378);
+			this->MagButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->MagButton->Name = L"MagButton";
-			this->MagButton->Size = System::Drawing::Size(71, 34);
+			this->MagButton->Size = System::Drawing::Size(106, 52);
 			this->MagButton->TabIndex = 2;
 			this->MagButton->Text = L"Mag";
 			this->MagButton->UseVisualStyleBackColor = true;
@@ -130,25 +140,28 @@ namespace Project1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(319, 220);
+			this->label1->Location = System::Drawing::Point(478, 338);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(41, 13);
+			this->label1->Size = System::Drawing::Size(59, 20);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Name: ";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(371, 217);
+			this->textBox1->Location = System::Drawing::Point(556, 334);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(137, 20);
+			this->textBox1->Size = System::Drawing::Size(204, 26);
 			this->textBox1->TabIndex = 4;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(314, 257);
+			this->label2->Location = System::Drawing::Point(471, 395);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(71, 13);
+			this->label2->Size = System::Drawing::Size(106, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Chose Class: ";
 			this->label2->Click += gcnew System::EventHandler(this, &MyUserControl::label2_Click);
@@ -156,9 +169,10 @@ namespace Project1 {
 			// HealthLabel
 			// 
 			this->HealthLabel->AutoSize = true;
-			this->HealthLabel->Location = System::Drawing::Point(298, 336);
+			this->HealthLabel->Location = System::Drawing::Point(447, 517);
+			this->HealthLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->HealthLabel->Name = L"HealthLabel";
-			this->HealthLabel->Size = System::Drawing::Size(44, 13);
+			this->HealthLabel->Size = System::Drawing::Size(64, 20);
 			this->HealthLabel->TabIndex = 3;
 			this->HealthLabel->Text = L"Health: ";
 			this->HealthLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
@@ -166,9 +180,10 @@ namespace Project1 {
 			// DemageLabel
 			// 
 			this->DemageLabel->AutoSize = true;
-			this->DemageLabel->Location = System::Drawing::Point(298, 372);
+			this->DemageLabel->Location = System::Drawing::Point(447, 572);
+			this->DemageLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->DemageLabel->Name = L"DemageLabel";
-			this->DemageLabel->Size = System::Drawing::Size(53, 13);
+			this->DemageLabel->Size = System::Drawing::Size(78, 20);
 			this->DemageLabel->TabIndex = 3;
 			this->DemageLabel->Text = L"Demage: ";
 			this->DemageLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
@@ -176,9 +191,10 @@ namespace Project1 {
 			// HpLabel
 			// 
 			this->HpLabel->AutoSize = true;
-			this->HpLabel->Location = System::Drawing::Point(362, 336);
+			this->HpLabel->Location = System::Drawing::Point(543, 517);
+			this->HpLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->HpLabel->Name = L"HpLabel";
-			this->HpLabel->Size = System::Drawing::Size(25, 13);
+			this->HpLabel->Size = System::Drawing::Size(36, 20);
 			this->HpLabel->TabIndex = 3;
 			this->HpLabel->Text = L"200";
 			this->HpLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
@@ -186,9 +202,10 @@ namespace Project1 {
 			// DmgLabel
 			// 
 			this->DmgLabel->AutoSize = true;
-			this->DmgLabel->Location = System::Drawing::Point(368, 372);
+			this->DmgLabel->Location = System::Drawing::Point(552, 572);
+			this->DmgLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->DmgLabel->Name = L"DmgLabel";
-			this->DmgLabel->Size = System::Drawing::Size(19, 13);
+			this->DmgLabel->Size = System::Drawing::Size(27, 20);
 			this->DmgLabel->TabIndex = 3;
 			this->DmgLabel->Text = L"25";
 			this->DmgLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
@@ -198,9 +215,10 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label5->Location = System::Drawing::Point(312, 13);
+			this->label5->Location = System::Drawing::Point(468, 20);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(221, 28);
+			this->label5->Size = System::Drawing::Size(329, 44);
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Create your character";
 			this->label5->UseMnemonic = false;
@@ -209,9 +227,10 @@ namespace Project1 {
 			// AssasinButton
 			// 
 			this->AssasinButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold));
-			this->AssasinButton->Location = System::Drawing::Point(468, 246);
+			this->AssasinButton->Location = System::Drawing::Point(702, 378);
+			this->AssasinButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->AssasinButton->Name = L"AssasinButton";
-			this->AssasinButton->Size = System::Drawing::Size(90, 34);
+			this->AssasinButton->Size = System::Drawing::Size(135, 52);
 			this->AssasinButton->TabIndex = 6;
 			this->AssasinButton->Text = L"Assasin";
 			this->AssasinButton->UseVisualStyleBackColor = true;
@@ -220,9 +239,10 @@ namespace Project1 {
 			// KnightButton
 			// 
 			this->KnightButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold));
-			this->KnightButton->Location = System::Drawing::Point(567, 246);
+			this->KnightButton->Location = System::Drawing::Point(850, 378);
+			this->KnightButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->KnightButton->Name = L"KnightButton";
-			this->KnightButton->Size = System::Drawing::Size(88, 34);
+			this->KnightButton->Size = System::Drawing::Size(132, 52);
 			this->KnightButton->TabIndex = 7;
 			this->KnightButton->Text = L"Knight";
 			this->KnightButton->UseVisualStyleBackColor = true;
@@ -231,9 +251,10 @@ namespace Project1 {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(317, 61);
+			this->pictureBox1->Location = System::Drawing::Point(476, 94);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(191, 144);
+			this->pictureBox1->Size = System::Drawing::Size(286, 222);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 8;
 			this->pictureBox1->TabStop = false;
@@ -241,9 +262,10 @@ namespace Project1 {
 			// CreateButton
 			// 
 			this->CreateButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold));
-			this->CreateButton->Location = System::Drawing::Point(313, 454);
+			this->CreateButton->Location = System::Drawing::Point(470, 698);
+			this->CreateButton->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->CreateButton->Name = L"CreateButton";
-			this->CreateButton->Size = System::Drawing::Size(100, 29);
+			this->CreateButton->Size = System::Drawing::Size(150, 45);
 			this->CreateButton->TabIndex = 9;
 			this->CreateButton->Text = L"Create";
 			this->CreateButton->UseVisualStyleBackColor = true;
@@ -251,9 +273,10 @@ namespace Project1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(524, 61);
+			this->button1->Location = System::Drawing::Point(786, 94);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(122, 23);
+			this->button1->Size = System::Drawing::Size(183, 35);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
@@ -261,9 +284,10 @@ namespace Project1 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(524, 90);
+			this->button2->Location = System::Drawing::Point(786, 138);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(122, 23);
+			this->button2->Size = System::Drawing::Size(183, 35);
 			this->button2->TabIndex = 11;
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
@@ -274,27 +298,31 @@ namespace Project1 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(54, 13);
+			this->label3->Location = System::Drawing::Point(81, 20);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(71, 28);
+			this->label3->Size = System::Drawing::Size(107, 44);
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Game";
 			this->label3->UseMnemonic = false;
+			this->label3->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click_1);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(56, 66);
+			this->label4->Location = System::Drawing::Point(84, 102);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(41, 13);
+			this->label4->Size = System::Drawing::Size(59, 20);
 			this->label4->TabIndex = 13;
 			this->label4->Text = L"Name: ";
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(103, 109);
+			this->button3->Location = System::Drawing::Point(154, 168);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(122, 23);
+			this->button3->Size = System::Drawing::Size(183, 35);
 			this->button3->TabIndex = 15;
 			this->button3->Text = L"New game";
 			this->button3->UseVisualStyleBackColor = true;
@@ -303,14 +331,15 @@ namespace Project1 {
 			// textBox2
 			// 
 			this->textBox2->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->textBox2->Location = System::Drawing::Point(103, 63);
+			this->textBox2->Location = System::Drawing::Point(154, 97);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(161, 20);
+			this->textBox2->Size = System::Drawing::Size(240, 26);
 			this->textBox2->TabIndex = 16;
 			// 
 			// MyUserControl
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->button3);
@@ -331,8 +360,9 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->MagButton);
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"MyUserControl";
-			this->Size = System::Drawing::Size(679, 562);
+			this->Size = System::Drawing::Size(1018, 865);
 			this->Load += gcnew System::EventHandler(this, &MyUserControl::MyUserControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -393,13 +423,17 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	MessageBox::Show(Postac::podajPostaæ( textBox1->Text)->kimJestem());
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	long long currentTicks = System::DateTime::Now.Ticks;
-	MessageBox::Show(currentTicks.ToString());
+	Gra::FireViewChangeEvent(1);
 }
 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 	Gra::newGame(textBox2->Text);
 	label3->Text = "Game: " + textBox2->Text;
 }
+private: System::Void label3_Click_1(System::Object^  sender, System::EventArgs^  e) {
+}
+
+
+		 
 };
 }

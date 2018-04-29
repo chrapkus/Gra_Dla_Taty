@@ -2,17 +2,22 @@
 
 using namespace System;
 
+delegate void ViewChangeEvent(int numerOkna);
+
 ref class Gra
 {
-public:
-	Gra();
 
-	static String^ gameId;
+public: static event ViewChangeEvent^ OnViewChange;
+
+public:
+	Gra();//konstruktor
+
+	static String^ gameId;// gameId-data
 	public: static String^ gameName;
 	static Gra ^ __GRA;
 	
 public: static String^ newGame(String^ gameNameP) {
-		delete gameId;
+			delete gameId;
 		gameId = System::DateTime::Now.Ticks.ToString();
 		gameName = gameNameP;
 		return gameId;
@@ -28,7 +33,10 @@ public: static String^ newGame(String^ gameNameP) {
 	}
 	return __GRA;
 	}
-
+public: static void FireViewChangeEvent(int numerOkna)
+{
+	OnViewChange(numerOkna);
+}
 
 	virtual ~Gra();
 };

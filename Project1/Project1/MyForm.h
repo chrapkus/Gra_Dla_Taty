@@ -116,6 +116,16 @@ namespace Project1 {
 
 		}
 #pragma endregion
+		public: void Wyswietl()
+		{
+			if (userControl1 == nullptr)
+				userControl1 = (gcnew Project1::MyUserControl1());
+
+			this->panel1->Controls->Add(userControl1);
+			userControl1->BringToFront();
+		}
+
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		
 		if( userControl == nullptr)
