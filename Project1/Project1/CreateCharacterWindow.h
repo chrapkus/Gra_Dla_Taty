@@ -198,7 +198,7 @@ namespace Project1 {
 			this->HpLabel->Name = L"HpLabel";
 			this->HpLabel->Size = System::Drawing::Size(36, 20);
 			this->HpLabel->TabIndex = 3;
-			this->HpLabel->Text = L"200";
+			this->HpLabel->Text = L"150";
 			this->HpLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// DmgLabel
@@ -209,7 +209,7 @@ namespace Project1 {
 			this->DmgLabel->Name = L"DmgLabel";
 			this->DmgLabel->Size = System::Drawing::Size(27, 20);
 			this->DmgLabel->TabIndex = 3;
-			this->DmgLabel->Text = L"25";
+			this->DmgLabel->Text = L"10";
 			this->DmgLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// label5
@@ -379,32 +379,44 @@ namespace Project1 {
 	{
 		String^ nameOfCharacter = textBox1->Text;
 		Character^ p1 = gcnew Assasin(nameOfCharacter, "Assasin.jpg", 100, 100, 50);
+		p1->name = nameOfCharacter;
+		p1->damage = 15;
+		p1->currenthealth = 120;
+		p1->maxhealth = 120;
 		p1->picture = "Assasin.jpg"; // z jakiegos powodu bez tej deklaracji 
 		HpLabel->Text = (p1->maxhealth).ToString();
 		DmgLabel->Text = (p1->damage).ToString();
 		pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
-		Character::dodajPostaæ(nameOfCharacter, p1);
+		Character::dodajPostaæ("player", p1);
 	}
 		private: System::Void KnightButton_Click(System::Object^  sender, System::EventArgs^  e)
 		{
 			String^ nameOfCharacter = textBox1->Text;
 			Character^ p1 = gcnew Knight(nameOfCharacter, "Knight.jpg", 100, 100, 50);
-			p1->picture = "Knight.jpg"; // z jakiegos powodu bez tej deklaracji 
+			p1->name = nameOfCharacter;
+			//p1->damage = 10;
+			//p1->currenthealth = 150;
+			//p1->maxhealth = 150;
+			p1->picture = "Knight.jpg"; // z jakiego powodu pomimo konstruktora wszystkie wartosci przujmuja wartosc 0 ...
 			HpLabel->Text = (p1->maxhealth).ToString();
 			DmgLabel->Text = (p1->damage).ToString();
-			pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
-			Character::dodajPostaæ(nameOfCharacter, p1);
+			pictureBox1->Image = Image::FromFile(p1->picture);// 
+			Character::dodajPostaæ("player", p1);
 		}
 	
 	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) 
 		{
 			String^ nameOfCharacter = textBox1->Text;
 			Character^ p1 = gcnew Mag(nameOfCharacter, "Mag.jpg", 100, 100, 50);
+			p1 -> name = nameOfCharacter;
+			p1->damage = 5;
+			p1->currenthealth = 100;
+			p1->maxhealth = 100;
 			p1->picture = "Mag.jpg"; // z jakiegos powodu bez tej deklaracji 
-			HpLabel->Text = (p1->maxhealth).ToString();
+			this->HpLabel->Text = (p1->maxhealth).ToString();
 			DmgLabel->Text = (p1->damage).ToString();
 			pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
-			Character::dodajPostaæ(nameOfCharacter, p1);
+			Character::dodajPostaæ("player", p1);
 		}
 
 		private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -423,7 +435,7 @@ private: System::Void CreateButton_Click(System::Object^  sender, System::EventA
 	//Project1::MyForm::zmiana();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show(Character::podajPostaæ( textBox1->Text)->kimJestem());
+	MessageBox::Show(Character::podajPostaæ( "player")->kimJestem());
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	Game::FireViewChangeEvent(1);

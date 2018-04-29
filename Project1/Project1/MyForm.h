@@ -38,8 +38,10 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  MenuButton;
 
 	private: System::Windows::Forms::Button^  button3;
-	private: Project1::CreateCharacterWindow ^ userControl;
-	private: Project1::FightWindow ^ userControl1;
+	private: Project1::CreateCharacterWindow ^ userControl = (gcnew Project1::CreateCharacterWindow());
+	private: Project1::FightWindow ^ userControl1 = (gcnew Project1::FightWindow());
+
+			
 	protected:
 
 	
@@ -57,6 +59,10 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel1->Controls->Add(userControl1);
+			this->panel1->Controls->Add(userControl);
+			userControl->BringToFront();
+
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->MenuButton = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
