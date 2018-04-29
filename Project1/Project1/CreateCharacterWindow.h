@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Postac.h"
-#include "Rycerz.h"
-#include "Gra.h"
+#include "Character.h"
+#include "Knight.h"
+#include "Mag.h"
+#include "Assasin.h"
+#include "Game.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -15,9 +17,9 @@ using namespace System::Drawing;
 namespace Project1 {
 
 	/// <summary>
-	/// Summary for MyUserControl
+	/// Summary for CreateCharacterWindow
 	/// </summary>
-	public ref class MyUserControl : public System::Windows::Forms::UserControl
+	public ref class CreateCharacterWindow : public System::Windows::Forms::UserControl
 	{
 	public:
 
@@ -28,10 +30,10 @@ namespace Project1 {
 			}
 		}
 
-		MyUserControl(void)
+		CreateCharacterWindow(void)
 		{
 			InitializeComponent();
-			Gra::OnViewChange += gcnew  ViewChangeEvent(this, &MyUserControl::ViewChangeHandler);
+			Game::OnViewChange += gcnew  ViewChangeEvent(this, &CreateCharacterWindow::ViewChangeHandler);
 			//
 			//TODO: Add the constructor code here
 			//
@@ -41,7 +43,7 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyUserControl()
+		~CreateCharacterWindow()
 		{
 			if (components)
 			{
@@ -101,7 +103,7 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyUserControl::typeid));
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(CreateCharacterWindow::typeid));
 			this->MagButton = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -135,7 +137,7 @@ namespace Project1 {
 			this->MagButton->TabIndex = 2;
 			this->MagButton->Text = L"Mag";
 			this->MagButton->UseVisualStyleBackColor = true;
-			this->MagButton->Click += gcnew System::EventHandler(this, &MyUserControl::MagButton_Click);
+			this->MagButton->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::MagButton_Click);
 			// 
 			// label1
 			// 
@@ -164,7 +166,7 @@ namespace Project1 {
 			this->label2->Size = System::Drawing::Size(106, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Chose Class: ";
-			this->label2->Click += gcnew System::EventHandler(this, &MyUserControl::label2_Click);
+			this->label2->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label2_Click);
 			// 
 			// HealthLabel
 			// 
@@ -175,7 +177,7 @@ namespace Project1 {
 			this->HealthLabel->Size = System::Drawing::Size(64, 20);
 			this->HealthLabel->TabIndex = 3;
 			this->HealthLabel->Text = L"Health: ";
-			this->HealthLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
+			this->HealthLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// DemageLabel
 			// 
@@ -186,7 +188,7 @@ namespace Project1 {
 			this->DemageLabel->Size = System::Drawing::Size(78, 20);
 			this->DemageLabel->TabIndex = 3;
 			this->DemageLabel->Text = L"Demage: ";
-			this->DemageLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
+			this->DemageLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// HpLabel
 			// 
@@ -197,7 +199,7 @@ namespace Project1 {
 			this->HpLabel->Size = System::Drawing::Size(36, 20);
 			this->HpLabel->TabIndex = 3;
 			this->HpLabel->Text = L"200";
-			this->HpLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
+			this->HpLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// DmgLabel
 			// 
@@ -208,7 +210,7 @@ namespace Project1 {
 			this->DmgLabel->Size = System::Drawing::Size(27, 20);
 			this->DmgLabel->TabIndex = 3;
 			this->DmgLabel->Text = L"25";
-			this->DmgLabel->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
+			this->DmgLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// label5
 			// 
@@ -222,7 +224,7 @@ namespace Project1 {
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Create your character";
 			this->label5->UseMnemonic = false;
-			this->label5->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click);
+			this->label5->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// AssasinButton
 			// 
@@ -234,7 +236,7 @@ namespace Project1 {
 			this->AssasinButton->TabIndex = 6;
 			this->AssasinButton->Text = L"Assasin";
 			this->AssasinButton->UseVisualStyleBackColor = true;
-			this->AssasinButton->Click += gcnew System::EventHandler(this, &MyUserControl::AssasinButton_Click);
+			this->AssasinButton->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::AssasinButton_Click);
 			// 
 			// KnightButton
 			// 
@@ -246,7 +248,7 @@ namespace Project1 {
 			this->KnightButton->TabIndex = 7;
 			this->KnightButton->Text = L"Knight";
 			this->KnightButton->UseVisualStyleBackColor = true;
-			this->KnightButton->Click += gcnew System::EventHandler(this, &MyUserControl::KnightButton_Click);
+			this->KnightButton->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::KnightButton_Click);
 			// 
 			// pictureBox1
 			// 
@@ -269,7 +271,7 @@ namespace Project1 {
 			this->CreateButton->TabIndex = 9;
 			this->CreateButton->Text = L"Create";
 			this->CreateButton->UseVisualStyleBackColor = true;
-			this->CreateButton->Click += gcnew System::EventHandler(this, &MyUserControl::CreateButton_Click);
+			this->CreateButton->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::CreateButton_Click);
 			// 
 			// button1
 			// 
@@ -280,7 +282,7 @@ namespace Project1 {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyUserControl::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::button1_Click);
 			// 
 			// button2
 			// 
@@ -291,7 +293,7 @@ namespace Project1 {
 			this->button2->TabIndex = 11;
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyUserControl::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::button2_Click);
 			// 
 			// label3
 			// 
@@ -305,7 +307,7 @@ namespace Project1 {
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Game";
 			this->label3->UseMnemonic = false;
-			this->label3->Click += gcnew System::EventHandler(this, &MyUserControl::label3_Click_1);
+			this->label3->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click_1);
 			// 
 			// label4
 			// 
@@ -326,7 +328,7 @@ namespace Project1 {
 			this->button3->TabIndex = 15;
 			this->button3->Text = L"New game";
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyUserControl::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::button3_Click);
 			// 
 			// textBox2
 			// 
@@ -337,7 +339,7 @@ namespace Project1 {
 			this->textBox2->Size = System::Drawing::Size(240, 26);
 			this->textBox2->TabIndex = 16;
 			// 
-			// MyUserControl
+			// CreateCharacterWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -361,9 +363,9 @@ namespace Project1 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->MagButton);
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->Name = L"MyUserControl";
+			this->Name = L"CreateCharacterWindow";
 			this->Size = System::Drawing::Size(1018, 865);
-			this->Load += gcnew System::EventHandler(this, &MyUserControl::MyUserControl_Load);
+			this->Load += gcnew System::EventHandler(this, &CreateCharacterWindow::MyUserControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -371,63 +373,64 @@ namespace Project1 {
 		}
 #pragma endregion
 		
-			Postac ^ P1 = gcnew Postac("Szymon","Rycerz", "rycerz.jpg", 25, 200, 200);
+		//	Character ^ P1 = gcnew Character("Szymon","Knight.jpg", "Knight", 25, 200, 200);
 			
-		
-	private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void AssasinButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
 		String^ nameOfCharacter = textBox1->Text;
-		Postac^ p1 = gcnew Rycerz(nameOfCharacter, "rycerzePicture.jpg", 100, 100, 50);
-		HpLabel->Text = (P1->maxhealth).ToString();
-		DmgLabel->Text = (P1->damage).ToString();
-		//pictureBox1->Image = Image::FromFile(P1->picture);
-		Postac::dodajPostaæ(nameOfCharacter, p1);
-
+		Character^ p1 = gcnew Assasin(nameOfCharacter, "Assasin.jpg", 100, 100, 50);
+		p1->picture = "Assasin.jpg"; // z jakiegos powodu bez tej deklaracji 
+		HpLabel->Text = (p1->maxhealth).ToString();
+		DmgLabel->Text = (p1->damage).ToString();
+		pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
+		Character::dodajPostaæ(nameOfCharacter, p1);
 	}
-		
+		private: System::Void KnightButton_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			String^ nameOfCharacter = textBox1->Text;
+			Character^ p1 = gcnew Knight(nameOfCharacter, "Knight.jpg", 100, 100, 50);
+			p1->picture = "Knight.jpg"; // z jakiegos powodu bez tej deklaracji 
+			HpLabel->Text = (p1->maxhealth).ToString();
+			DmgLabel->Text = (p1->damage).ToString();
+			pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
+			Character::dodajPostaæ(nameOfCharacter, p1);
+		}
+	
+	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) 
+		{
+			String^ nameOfCharacter = textBox1->Text;
+			Character^ p1 = gcnew Mag(nameOfCharacter, "Mag.jpg", 100, 100, 50);
+			p1->picture = "Mag.jpg"; // z jakiegos powodu bez tej deklaracji 
+			HpLabel->Text = (p1->maxhealth).ToString();
+			DmgLabel->Text = (p1->damage).ToString();
+			pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
+			Character::dodajPostaæ(nameOfCharacter, p1);
+		}
+
+		private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+		}
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void MyUserControl_Load(System::Object^  sender, System::EventArgs^  e) {
 }
-private: System::Void AssasinButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	P1->type = "Assasin";
-	P1->maxhealth = 150;
-	P1->damage = 30;
-	P1->picture = "Assasyn.jpg";
-	HpLabel->Text = (P1->maxhealth).ToString();
-	DmgLabel->Text = (P1->damage).ToString();
-	pictureBox1->Image = Image::FromFile(P1->picture);
-}
-
-private: System::Void KnightButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	P1->type = "Knight";
-	P1->maxhealth = 200;
-	P1->damage = 25;
-	P1->picture = "rycerz.jpg";
-	HpLabel->Text = (P1->maxhealth).ToString();
-	DmgLabel->Text = (P1->damage).ToString();
-	pictureBox1->Image = Image::FromFile(P1->picture);	
-}
-
 private: System::Void CreateButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (textBox1->Text == "") {
 		MessageBox::Show("Nazwa nie mo¿e byæ pusta!");
 	}
-	P1->name = textBox1->Text;
+	
 	//Project1::MyForm::zmiana();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show(Postac::podajPostaæ( textBox1->Text)->kimJestem());
+	MessageBox::Show(Character::podajPostaæ( textBox1->Text)->kimJestem());
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	Gra::FireViewChangeEvent(1);
+	Game::FireViewChangeEvent(1);
 }
 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	Gra::newGame(textBox2->Text);
+	Game::newGame(textBox2->Text);
 	label3->Text = "Game: " + textBox2->Text;
 }
 private: System::Void label3_Click_1(System::Object^  sender, System::EventArgs^  e) {

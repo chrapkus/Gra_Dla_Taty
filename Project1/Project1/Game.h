@@ -2,19 +2,19 @@
 
 using namespace System;
 
-delegate void ViewChangeEvent(int numerOkna);
+delegate void ViewChangeEvent(int numerOkna); 
 
-ref class Gra
+ref class Game
 {
 
 public: static event ViewChangeEvent^ OnViewChange;
 
 public:
-	Gra();//konstruktor
+	Game();//konstruktor
 
 	static String^ gameId;// gameId-data
 	public: static String^ gameName;
-	static Gra ^ __GRA;
+	static Game ^ __GRA;
 	
 public: static String^ newGame(String^ gameNameP) {
 			delete gameId;
@@ -27,9 +27,9 @@ public: static String^ newGame(String^ gameNameP) {
 		return gameId;
 	}
 
-	public: static Gra^ getGame() {
+	public: static Game^ getGame() {
 	if (__GRA == nullptr) {
-		__GRA = gcnew Gra();
+		__GRA = gcnew Game();
 	}
 	return __GRA;
 	}
@@ -38,5 +38,5 @@ public: static void FireViewChangeEvent(int numerOkna)
 	OnViewChange(numerOkna);
 }
 
-	virtual ~Gra();
+	virtual ~Game();
 };

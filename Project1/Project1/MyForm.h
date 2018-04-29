@@ -1,6 +1,6 @@
 #pragma once
-#include "MyUserControl.h"
-#include "MyUserControl1.h"
+#include "FightWindow.h"
+#include "CreateCharacterWindow.h"
 namespace Project1 {
 
 	using namespace System;
@@ -38,8 +38,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  MenuButton;
 
 	private: System::Windows::Forms::Button^  button3;
-	private: Project1::MyUserControl ^ userControl;
-	private: Project1::MyUserControl1 ^ userControl1;
+	private: Project1::CreateCharacterWindow ^ userControl;
+	private: Project1::FightWindow ^ userControl1;
 	protected:
 
 	
@@ -116,41 +116,22 @@ namespace Project1 {
 
 		}
 #pragma endregion
-		public: void Wyswietl()
-		{
-			if (userControl1 == nullptr)
-				userControl1 = (gcnew Project1::MyUserControl1());
-
-			this->panel1->Controls->Add(userControl1);
-			userControl1->BringToFront();
-		}
-
-
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
+	{
 		if( userControl == nullptr)
-			userControl = (gcnew Project1::MyUserControl());
+			userControl = (gcnew Project1::CreateCharacterWindow()); //
 		
 		this->panel1->Controls->Add(userControl);
 		userControl->BringToFront();
-	
-	
-	
 	}
 			
-	public: System::Void MenuButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	public: System::Void MenuButton_Click(System::Object^  sender, System::EventArgs^  e)
+	{
 		if (userControl1 == nullptr)
-			userControl1 = (gcnew Project1::MyUserControl1());
+			userControl1 = (gcnew Project1::FightWindow());
 
 		this->panel1->Controls->Add(userControl1);
 		userControl1->BringToFront();
-
 	}
-
-			void zmiana()
-			{
-				this->panel1->Controls->Add(userControl1);
-				userControl1->BringToFront();
-			}
 };
 }

@@ -1,6 +1,6 @@
 #pragma once
-#include "Postac.h"
-#include "MyUserControl.h"
+#include "Character.h"
+#include "CreateCharacterWindow.h"
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -13,9 +13,9 @@ using namespace System::Drawing;
 namespace Project1 {
 
 	/// <summary>
-	/// Summary for MyUserControl1
+	/// Summary for FightWindow
 	/// </summary>
-	public ref class MyUserControl1 : public System::Windows::Forms::UserControl
+	public ref class FightWindow : public System::Windows::Forms::UserControl
 	{
 
 		void ViewChangeHandler(int numerOkna) {
@@ -26,11 +26,11 @@ namespace Project1 {
 		}
 
 	public:
-		MyUserControl1(void)
+		FightWindow(void)
 		{
 			InitializeComponent();
 
-			Gra::OnViewChange += gcnew  ViewChangeEvent(this, &MyUserControl1::ViewChangeHandler);
+			Game::OnViewChange += gcnew  ViewChangeEvent(this, &FightWindow::ViewChangeHandler);// ?????
 
 			//
 			//TODO: Add the constructor code here
@@ -41,7 +41,7 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyUserControl1()
+		~FightWindow()
 		{
 			if (components)
 			{
@@ -75,7 +75,7 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyUserControl1::typeid));
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(FightWindow::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -100,7 +100,7 @@ namespace Project1 {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyUserControl1::pictureBox1_Click);
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &FightWindow::pictureBox1_Click);
 			// 
 			// label1
 			// 
@@ -135,7 +135,7 @@ namespace Project1 {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(150, 20);
 			this->panel2->TabIndex = 0;
-			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyUserControl1::panel2_Paint);
+			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &FightWindow::panel2_Paint);
 			// 
 			// panel3
 			// 
@@ -152,7 +152,7 @@ namespace Project1 {
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(150, 20);
 			this->panel4->TabIndex = 0;
-			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyUserControl1::panel2_Paint);
+			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &FightWindow::panel2_Paint);
 			// 
 			// pictureBox2
 			// 
@@ -179,9 +179,9 @@ namespace Project1 {
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyUserControl1::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &FightWindow::button1_Click);
 			// 
-			// MyUserControl1
+			// FightWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -195,9 +195,9 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
-			this->Name = L"MyUserControl1";
+			this->Name = L"FightWindow";
 			this->Size = System::Drawing::Size(679, 562);
-			this->Load += gcnew System::EventHandler(this, &MyUserControl1::MyUserControl1_Load);
+			this->Load += gcnew System::EventHandler(this, &FightWindow::MyUserControl1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
@@ -226,7 +226,7 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	//MessageBox::Show(Postac::getPostac()->kimJestem());
-	Gra::FireViewChangeEvent(0);
+	Game::FireViewChangeEvent(0);
 }
 };
 }

@@ -12,7 +12,7 @@ enum TypPostaci{
 	POSTAC_BABAJAGA = 3
 };
 
-ref class Postac
+ref class Character
 {
 public:
 	System::String^ name;
@@ -23,11 +23,11 @@ public:
 	int currenthealth;
 
 	// test set<String^>^ emplSet = gcnew set<String^>();		
-	static map<String^, Postac^>^  Postacie = gcnew map<String^, Postac^>();
+	static map<String^, Character^>^  CharacterS = gcnew map<String^, Character^>();
 
 public:
-	Postac() {}
-	Postac(String^ name, String^ picture, String^ type, int damage, int maxhealth, int currenthealth)
+	Character() {}
+	Character(String^ name, String^ picture, String^ type, int damage, int maxhealth, int currenthealth)
 
 	{
 		this->name = name;
@@ -51,12 +51,12 @@ public: static Postac ^ getPostac() {
 }
 */
 
-public: static void dodajPostaæ(String^ key, Postac^ postac) {
-	Postacie[key] = postac;
+public: static void dodajPostaæ(String^ key, Character^ character) {
+	CharacterS[key] = character;
 }
 
-public: static Postac^ podajPostaæ(String^ key) {
-	return Postacie[key];
+public: static Character^ podajPostaæ(String^ key) {
+	return CharacterS[key];
 }
 
 };
