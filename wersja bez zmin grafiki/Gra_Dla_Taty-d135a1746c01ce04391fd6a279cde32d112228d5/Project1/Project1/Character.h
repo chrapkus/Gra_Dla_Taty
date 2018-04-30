@@ -56,4 +56,15 @@ public: static characterMapType::iterator getEndIterator() {
 	return CharacterS->end();
 }
 
+//reset postaci, usuwa za pomoc¹ operatora delete i czysci kontener
+public: static void reset() {
+	characterMapType::iterator begin = CharacterS->begin();
+	characterMapType::iterator end = CharacterS->end();
+	while (begin != end) {
+		Character^ character = begin.get_ref()->second;
+		delete character;
+		begin++;
+	}
+	CharacterS->clear();
+}
 };

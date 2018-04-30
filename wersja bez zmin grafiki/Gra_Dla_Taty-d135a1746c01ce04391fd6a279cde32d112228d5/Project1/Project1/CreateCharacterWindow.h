@@ -471,6 +471,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 }
 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	Character::reset();
 	Game::newGame(textBox2->Text);
 	label3->Text = "Game: " + textBox2->Text;
 }
