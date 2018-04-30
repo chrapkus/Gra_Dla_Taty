@@ -129,9 +129,9 @@ namespace Project1 {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -142,7 +142,7 @@ namespace Project1 {
 			this->MagButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->MagButton->Location = System::Drawing::Point(121, 286);
-			this->MagButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->MagButton->Margin = System::Windows::Forms::Padding(4);
 			this->MagButton->Name = L"MagButton";
 			this->MagButton->Size = System::Drawing::Size(73, 35);
 			this->MagButton->TabIndex = 2;
@@ -156,16 +156,16 @@ namespace Project1 {
 			this->label1->Location = System::Drawing::Point(22, 259);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(51, 16);
+			this->label1->Size = System::Drawing::Size(75, 25);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Name: ";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(121, 256);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(181, 22);
+			this->textBox1->Size = System::Drawing::Size(181, 30);
 			this->textBox1->TabIndex = 4;
 			// 
 			// label2
@@ -174,7 +174,7 @@ namespace Project1 {
 			this->label2->Location = System::Drawing::Point(22, 305);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(90, 16);
+			this->label2->Size = System::Drawing::Size(136, 25);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Chose Class: ";
 			this->label2->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label2_Click);
@@ -185,7 +185,7 @@ namespace Project1 {
 			this->HealthLabel->Location = System::Drawing::Point(21, 412);
 			this->HealthLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->HealthLabel->Name = L"HealthLabel";
-			this->HealthLabel->Size = System::Drawing::Size(53, 16);
+			this->HealthLabel->Size = System::Drawing::Size(79, 25);
 			this->HealthLabel->TabIndex = 3;
 			this->HealthLabel->Text = L"Health: ";
 			this->HealthLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
@@ -196,7 +196,7 @@ namespace Project1 {
 			this->DemageLabel->Location = System::Drawing::Point(21, 456);
 			this->DemageLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->DemageLabel->Name = L"DemageLabel";
-			this->DemageLabel->Size = System::Drawing::Size(67, 16);
+			this->DemageLabel->Size = System::Drawing::Size(97, 25);
 			this->DemageLabel->TabIndex = 3;
 			this->DemageLabel->Text = L"Demage: ";
 			this->DemageLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
@@ -207,7 +207,7 @@ namespace Project1 {
 			this->HpLabel->Location = System::Drawing::Point(106, 412);
 			this->HpLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->HpLabel->Name = L"HpLabel";
-			this->HpLabel->Size = System::Drawing::Size(29, 16);
+			this->HpLabel->Size = System::Drawing::Size(45, 25);
 			this->HpLabel->TabIndex = 3;
 			this->HpLabel->Text = L"150";
 			this->HpLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
@@ -218,7 +218,7 @@ namespace Project1 {
 			this->DmgLabel->Location = System::Drawing::Point(106, 456);
 			this->DmgLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->DmgLabel->Name = L"DmgLabel";
-			this->DmgLabel->Size = System::Drawing::Size(22, 16);
+			this->DmgLabel->Size = System::Drawing::Size(34, 25);
 			this->DmgLabel->TabIndex = 3;
 			this->DmgLabel->Text = L"10";
 			this->DmgLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
@@ -231,7 +231,7 @@ namespace Project1 {
 			this->label5->Location = System::Drawing::Point(21, 30);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(221, 28);
+			this->label5->Size = System::Drawing::Size(329, 44);
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Create your character";
 			this->label5->UseMnemonic = false;
@@ -241,7 +241,7 @@ namespace Project1 {
 			// 
 			this->AssasinButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold));
 			this->AssasinButton->Location = System::Drawing::Point(202, 286);
-			this->AssasinButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->AssasinButton->Margin = System::Windows::Forms::Padding(4);
 			this->AssasinButton->Name = L"AssasinButton";
 			this->AssasinButton->Size = System::Drawing::Size(69, 35);
 			this->AssasinButton->TabIndex = 6;
@@ -253,7 +253,7 @@ namespace Project1 {
 			// 
 			this->KnightButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 9.75F, System::Drawing::FontStyle::Bold));
 			this->KnightButton->Location = System::Drawing::Point(279, 286);
-			this->KnightButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->KnightButton->Margin = System::Windows::Forms::Padding(4);
 			this->KnightButton->Name = L"KnightButton";
 			this->KnightButton->Size = System::Drawing::Size(66, 35);
 			this->KnightButton->TabIndex = 7;
@@ -265,7 +265,7 @@ namespace Project1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(24, 71);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(255, 177);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -276,7 +276,7 @@ namespace Project1 {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(300, 71);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(98, 28);
 			this->button1->TabIndex = 10;
@@ -287,7 +287,7 @@ namespace Project1 {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(300, 100);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(98, 28);
 			this->button2->TabIndex = 11;
@@ -303,7 +303,7 @@ namespace Project1 {
 			this->label3->Location = System::Drawing::Point(15, 16);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(71, 28);
+			this->label3->Size = System::Drawing::Size(107, 44);
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Game";
 			this->label3->UseMnemonic = false;
@@ -315,7 +315,7 @@ namespace Project1 {
 			this->label4->Location = System::Drawing::Point(18, 62);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(51, 16);
+			this->label4->Size = System::Drawing::Size(75, 25);
 			this->label4->TabIndex = 13;
 			this->label4->Text = L"Name: ";
 			this->label4->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label4_Click);
@@ -323,7 +323,7 @@ namespace Project1 {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(20, 111);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(109, 28);
 			this->button3->TabIndex = 15;
@@ -335,9 +335,9 @@ namespace Project1 {
 			// 
 			this->textBox2->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->textBox2->Location = System::Drawing::Point(77, 59);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(213, 22);
+			this->textBox2->Size = System::Drawing::Size(213, 30);
 			this->textBox2->TabIndex = 16;
 			// 
 			// groupBox1
@@ -348,9 +348,9 @@ namespace Project1 {
 			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Location = System::Drawing::Point(4, 4);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(320, 194);
 			this->groupBox1->TabIndex = 17;
 			this->groupBox1->TabStop = false;
@@ -376,32 +376,13 @@ namespace Project1 {
 			this->groupBox2->Controls->Add(this->textBox1);
 			this->groupBox2->Controls->Add(this->label5);
 			this->groupBox2->Controls->Add(this->DmgLabel);
-			this->groupBox2->Location = System::Drawing::Point(331, 4);
+			this->groupBox2->Location = System::Drawing::Point(531, 103);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(418, 491);
 			this->groupBox2->TabIndex = 18;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Character options";
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &CreateCharacterWindow::groupBox2_Enter);
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(21, 364);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(90, 16);
-			this->label6->TabIndex = 12;
-			this->label6->Text = L"Chose Class: ";
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Mag", L"Assassin", L"Knight" });
-			this->comboBox1->Location = System::Drawing::Point(121, 360);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(158, 24);
-			this->comboBox1->TabIndex = 13;
 			// 
 			// button4
 			// 
@@ -415,17 +396,37 @@ namespace Project1 {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::button4_Click);
 			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Mag", L"Assassin", L"Knight" });
+			this->comboBox1->Location = System::Drawing::Point(121, 360);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(158, 33);
+			this->comboBox1->TabIndex = 13;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &CreateCharacterWindow::comboBox1_SelectedIndexChanged);
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(21, 364);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(136, 25);
+			this->label6->TabIndex = 12;
+			this->label6->Text = L"Chose Class: ";
+			// 
 			// CreateCharacterWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->Margin = System::Windows::Forms::Padding(7, 6, 7, 6);
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"CreateCharacterWindow";
-			this->Size = System::Drawing::Size(1547, 564);
+			this->Size = System::Drawing::Size(1018, 843);
 			this->Load += gcnew System::EventHandler(this, &CreateCharacterWindow::MyUserControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
@@ -521,6 +522,8 @@ private: System::Void groupBox2_Enter(System::Object^  sender, System::EventArgs
 private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

@@ -61,7 +61,7 @@ namespace Project1 {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->Controls->Add(userControl1);
 			this->panel1->Controls->Add(userControl);
-			userControl->BringToFront();
+		//	userControl->BringToFront();
 
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->MenuButton = (gcnew System::Windows::Forms::Button());

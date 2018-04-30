@@ -27,7 +27,7 @@ namespace Project1 {
 		void ViewChangeHandler(int numerOkna) {
 			if (numerOkna == 1)
 			{
-				this->PlayerLabel->Text = Character::getCharacter("player")->name;
+				//this->PlayerLabel->Text = Character::getCharacter("player")->name;
 				this->BringToFront();
 
 			}
@@ -107,9 +107,10 @@ namespace Project1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(65, 109);
+			this->pictureBox1->Location = System::Drawing::Point(98, 168);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(237, 194);
+			this->pictureBox1->Size = System::Drawing::Size(356, 298);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -118,9 +119,10 @@ namespace Project1 {
 			// PlayerLabel
 			// 
 			this->PlayerLabel->AutoSize = true;
-			this->PlayerLabel->Location = System::Drawing::Point(63, 36);
+			this->PlayerLabel->Location = System::Drawing::Point(94, 55);
+			this->PlayerLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->PlayerLabel->Name = L"PlayerLabel";
-			this->PlayerLabel->Size = System::Drawing::Size(29, 13);
+			this->PlayerLabel->Size = System::Drawing::Size(42, 20);
 			this->PlayerLabel->TabIndex = 1;
 			this->PlayerLabel->Text = L"label";
 			this->PlayerLabel->Click += gcnew System::EventHandler(this, &FightWindow::label1_Click);
@@ -128,68 +130,76 @@ namespace Project1 {
 			// OponentLabel
 			// 
 			this->OponentLabel->AutoSize = true;
-			this->OponentLabel->Location = System::Drawing::Point(385, 36);
+			this->OponentLabel->Location = System::Drawing::Point(578, 55);
+			this->OponentLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->OponentLabel->Name = L"OponentLabel";
-			this->OponentLabel->Size = System::Drawing::Size(29, 13);
+			this->OponentLabel->Size = System::Drawing::Size(42, 20);
 			this->OponentLabel->TabIndex = 2;
 			this->OponentLabel->Text = L"label";
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->panel1->Location = System::Drawing::Point(67, 52);
+			this->panel1->Location = System::Drawing::Point(100, 80);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(235, 20);
+			this->panel1->Size = System::Drawing::Size(352, 31);
 			this->panel1->TabIndex = 4;
 			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Red;
-			this->panel2->Location = System::Drawing::Point(67, 52);
+			this->panel2->Location = System::Drawing::Point(100, 80);
+			this->panel2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(150, 20);
+			this->panel2->Size = System::Drawing::Size(225, 31);
 			this->panel2->TabIndex = 0;
 			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &FightWindow::panel2_Paint);
 			// 
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->panel3->Location = System::Drawing::Point(388, 52);
+			this->panel3->Location = System::Drawing::Point(582, 80);
+			this->panel3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(235, 20);
+			this->panel3->Size = System::Drawing::Size(352, 31);
 			this->panel3->TabIndex = 4;
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::Red;
-			this->panel4->Location = System::Drawing::Point(388, 52);
+			this->panel4->Location = System::Drawing::Point(582, 80);
+			this->panel4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(150, 20);
+			this->panel4->Size = System::Drawing::Size(225, 31);
 			this->panel4->TabIndex = 0;
 			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &FightWindow::panel2_Paint);
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->Location = System::Drawing::Point(388, 109);
+			this->pictureBox2->Location = System::Drawing::Point(582, 168);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(235, 194);
+			this->pictureBox2->Size = System::Drawing::Size(352, 298);
 			this->pictureBox2->TabIndex = 5;
 			this->pictureBox2->TabStop = false;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(305, 390);
+			this->label3->Location = System::Drawing::Point(458, 600);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(35, 13);
+			this->label3->Size = System::Drawing::Size(51, 20);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"label3";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(399, 408);
+			this->button1->Location = System::Drawing::Point(598, 628);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(184, 40);
+			this->button1->Size = System::Drawing::Size(276, 62);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
@@ -198,25 +208,28 @@ namespace Project1 {
 			// chracter2ComboBox
 			// 
 			this->chracter2ComboBox->FormattingEnabled = true;
-			this->chracter2ComboBox->Location = System::Drawing::Point(388, 324);
+			this->chracter2ComboBox->Location = System::Drawing::Point(582, 498);
+			this->chracter2ComboBox->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->chracter2ComboBox->Name = L"chracter2ComboBox";
-			this->chracter2ComboBox->Size = System::Drawing::Size(235, 21);
+			this->chracter2ComboBox->Size = System::Drawing::Size(350, 28);
 			this->chracter2ComboBox->TabIndex = 8;
 			// 
 			// chracter1ComboBox
 			// 
 			this->chracter1ComboBox->FormattingEnabled = true;
-			this->chracter1ComboBox->Location = System::Drawing::Point(65, 324);
+			this->chracter1ComboBox->Location = System::Drawing::Point(98, 498);
+			this->chracter1ComboBox->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->chracter1ComboBox->Name = L"chracter1ComboBox";
-			this->chracter1ComboBox->Size = System::Drawing::Size(237, 21);
+			this->chracter1ComboBox->Size = System::Drawing::Size(354, 28);
 			this->chracter1ComboBox->TabIndex = 9;
 			this->chracter1ComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &FightWindow::chracter1ComboBox_SelectedIndexChanged);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(67, 417);
+			this->button2->Location = System::Drawing::Point(100, 642);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(180, 23);
+			this->button2->Size = System::Drawing::Size(270, 35);
 			this->button2->TabIndex = 10;
 			this->button2->Text = L"populateCoboBox";
 			this->button2->UseVisualStyleBackColor = true;
@@ -224,9 +237,10 @@ namespace Project1 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(65, 362);
+			this->button3->Location = System::Drawing::Point(98, 557);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(164, 23);
+			this->button3->Size = System::Drawing::Size(246, 35);
 			this->button3->TabIndex = 11;
 			this->button3->Text = L"Choose";
 			this->button3->UseVisualStyleBackColor = true;
@@ -234,16 +248,17 @@ namespace Project1 {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(388, 362);
+			this->button4->Location = System::Drawing::Point(582, 557);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(164, 23);
+			this->button4->Size = System::Drawing::Size(246, 35);
 			this->button4->TabIndex = 12;
 			this->button4->Text = L"Choose";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// FightWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -260,8 +275,9 @@ namespace Project1 {
 			this->Controls->Add(this->OponentLabel);
 			this->Controls->Add(this->PlayerLabel);
 			this->Controls->Add(this->pictureBox1);
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"FightWindow";
-			this->Size = System::Drawing::Size(679, 562);
+			this->Size = System::Drawing::Size(1018, 843);
 			this->Load += gcnew System::EventHandler(this, &FightWindow::MyUserControl1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
