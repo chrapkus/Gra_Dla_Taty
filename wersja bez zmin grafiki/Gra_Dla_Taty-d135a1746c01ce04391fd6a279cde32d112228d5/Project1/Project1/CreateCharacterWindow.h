@@ -166,7 +166,7 @@ namespace Project1 {
 			this->label2->Size = System::Drawing::Size(106, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Chose Class: ";
-			this->label2->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label2_Click);
+			
 			// 
 			// HealthLabel
 			// 
@@ -177,7 +177,6 @@ namespace Project1 {
 			this->HealthLabel->Size = System::Drawing::Size(64, 20);
 			this->HealthLabel->TabIndex = 3;
 			this->HealthLabel->Text = L"Health: ";
-			this->HealthLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// DemageLabel
 			// 
@@ -188,7 +187,6 @@ namespace Project1 {
 			this->DemageLabel->Size = System::Drawing::Size(78, 20);
 			this->DemageLabel->TabIndex = 3;
 			this->DemageLabel->Text = L"Demage: ";
-			this->DemageLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// HpLabel
 			// 
@@ -199,7 +197,6 @@ namespace Project1 {
 			this->HpLabel->Size = System::Drawing::Size(36, 20);
 			this->HpLabel->TabIndex = 3;
 			this->HpLabel->Text = L"150";
-			this->HpLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// DmgLabel
 			// 
@@ -210,7 +207,6 @@ namespace Project1 {
 			this->DmgLabel->Size = System::Drawing::Size(27, 20);
 			this->DmgLabel->TabIndex = 3;
 			this->DmgLabel->Text = L"10";
-			this->DmgLabel->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// label5
 			// 
@@ -224,7 +220,6 @@ namespace Project1 {
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Set Your team";
 			this->label5->UseMnemonic = false;
-			this->label5->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click);
 			// 
 			// AssasinButton
 			// 
@@ -307,7 +302,6 @@ namespace Project1 {
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Game";
 			this->label3->UseMnemonic = false;
-			this->label3->Click += gcnew System::EventHandler(this, &CreateCharacterWindow::label3_Click_1);
 			// 
 			// label4
 			// 
@@ -365,7 +359,6 @@ namespace Project1 {
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"CreateCharacterWindow";
 			this->Size = System::Drawing::Size(1018, 865);
-			this->Load += gcnew System::EventHandler(this, &CreateCharacterWindow::MyUserControl_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -373,8 +366,8 @@ namespace Project1 {
 		}
 #pragma endregion
 		
-		//	Character ^ P1 = gcnew Character("Szymon","Knight.jpg", "Knight", 25, 200, 200);
-		int NumberOfCharacters = 0;
+	int NumberOfCharacters = 0;
+	
 	private: System::Void AssasinButton_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		if (NumberOfCharacters < 3) {
@@ -386,14 +379,9 @@ namespace Project1 {
 			{
 				String^ nameOfCharacter = textBox1->Text;
 				Character^ p1 = gcnew Assasin(nameOfCharacter, "Assasin.jpg", 100, 100, 50);
-				p1->name = nameOfCharacter;
-				p1->damage = 15;
-				p1->currenthealth = 120;
-				p1->maxhealth = 120;
-				p1->picture = "Assasin.jpg"; // z jakiegos powodu bez tej deklaracji 
 				HpLabel->Text = (p1->maxhealth).ToString();
 				DmgLabel->Text = (p1->damage).ToString();
-				pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
+				pictureBox1->Image = Image::FromFile(p1->picture);
 				Character::addCharacter(nameOfCharacter, p1);
 				MessageBox::Show("New member of your team: " + nameOfCharacter);
 				textBox1->Text = "";
@@ -418,11 +406,6 @@ namespace Project1 {
 				{
 					String^ nameOfCharacter = textBox1->Text;
 					Character^ p1 = gcnew Knight(nameOfCharacter, "Knight.jpg", 100, 100, 50);
-					p1->name = nameOfCharacter;
-					p1->damage = 10;
-					p1->currenthealth = 150;
-					p1->maxhealth = 150;
-					p1->picture = "Knight.jpg"; // z jakiego powodu pomimo konstruktora wszystkie wartosci przujmuja wartosc 0 ...
 					HpLabel->Text = (p1->maxhealth).ToString();
 					DmgLabel->Text = (p1->damage).ToString();
 					pictureBox1->Image = Image::FromFile(p1->picture);
@@ -451,14 +434,9 @@ namespace Project1 {
 			{
 				String^ nameOfCharacter = textBox1->Text;
 				Character^ p1 = gcnew Mag(nameOfCharacter, "Mag.jpg", 100, 100, 50);
-				p1->name = nameOfCharacter;
-				p1->damage = 5;
-				p1->currenthealth = 100;
-				p1->maxhealth = 100;
-				p1->picture = "Mag.jpg"; // z jakiegos powodu bez tej deklaracji 
 				this->HpLabel->Text = (p1->maxhealth).ToString();
 				DmgLabel->Text = (p1->damage).ToString();
-				pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
+				pictureBox1->Image = Image::FromFile(p1->picture);
 				Character::addCharacter(nameOfCharacter, p1);
 				MessageBox::Show("New member of your team: " + nameOfCharacter);
 				textBox1->Text = "";
@@ -472,14 +450,7 @@ namespace Project1 {
 		}
 		}
 
-		private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		}
-	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
-}
-private: System::Void MyUserControl_Load(System::Object^  sender, System::EventArgs^  e) {
-}
+
 private: System::Void CreateButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (NumberOfCharacters==3) 
 	{
@@ -503,10 +474,6 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 	Game::newGame(textBox2->Text);
 	label3->Text = "Game: " + textBox2->Text;
 }
-private: System::Void label3_Click_1(System::Object^  sender, System::EventArgs^  e) {
-}
-
-
-		 
+ 
 };
 }

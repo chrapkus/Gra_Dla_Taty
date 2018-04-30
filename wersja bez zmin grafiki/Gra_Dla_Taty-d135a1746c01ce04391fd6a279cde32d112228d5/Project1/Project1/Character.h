@@ -24,7 +24,7 @@ public:
 	//static map<String^, Character^>^  CharacterS = gcnew map<String^, Character^>();
 
 public:
-	Character() {}
+	//Character() {}
 	Character(String^ name, String^ picture, String^ type, int damage, int maxhealth, int currenthealth)
 
 	{
