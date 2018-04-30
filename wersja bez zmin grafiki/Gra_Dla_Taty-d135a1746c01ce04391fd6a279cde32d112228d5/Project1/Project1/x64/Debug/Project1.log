@@ -1,0 +1,8 @@
+﻿  CreateCharacterWindow.cpp
+c:\users\chrap\desktop\wersja bez zmin grafiki\gra_dla_taty-d135a1746c01ce04391fd6a279cde32d112228d5\project1\project1\fightwindow.h(60): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  FightWindow.cpp
+c:\users\chrap\desktop\wersja bez zmin grafiki\gra_dla_taty-d135a1746c01ce04391fd6a279cde32d112228d5\project1\project1\fightwindow.h(60): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MyForm.cpp
+c:\users\chrap\desktop\wersja bez zmin grafiki\gra_dla_taty-d135a1746c01ce04391fd6a279cde32d112228d5\project1\project1\fightwindow.h(60): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Project1.vcxproj -> C:\Users\chrap\Desktop\wersja bez zmin grafiki\Gra_Dla_Taty-d135a1746c01ce04391fd6a279cde32d112228d5\Project1\x64\Debug\Project1.exe
