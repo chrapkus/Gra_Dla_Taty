@@ -9,7 +9,7 @@ public:
 		Character(name, picture, gcnew String("Mag"), 100, 100, 20);
 	}
 
-	virtual String ^ kimJestem() override {
+	virtual String ^ whoAmI() override {
 		return gcnew String("Hokus POkus");
 	}
 

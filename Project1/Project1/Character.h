@@ -5,12 +5,9 @@
 using namespace cliext;
 using namespace System;
 
-enum TypPostaci{
-	POSTAC_RYCERZ = 0,
-	POSTAC_PIES = 1,
-	POSTAC_KSIADZ = 2,
-	POSTAC_BABAJAGA = 3
-};
+ref class Character;
+
+typedef map<String^, Character^> characterMapType;
 
 ref class Character
 {
@@ -21,9 +18,10 @@ public:
 	int damage;
 	int maxhealth;
 	int currenthealth;
-
-	// test set<String^>^ emplSet = gcnew set<String^>();		
-	static map<String^, Character^>^  CharacterS = gcnew map<String^, Character^>();
+		
+	//typedef map<String^, Character^> characterMapType;
+	static characterMapType^ CharacterS = gcnew characterMapType();
+	//static map<String^, Character^>^  CharacterS = gcnew map<String^, Character^>();
 
 public:
 	Character() {}
@@ -38,25 +36,24 @@ public:
 		this->currenthealth = currenthealth;
 	}
 
-public: virtual String^ kimJestem() {
+public: virtual String^ whoAmI() {
 	return gcnew String("Jestem zwyk³¹ postaci¹.");
 }
 
-/*
-public: static Postac ^ getPostac() {
-	if (__POSTAC == nullptr) {
-		__POSTAC = gcnew Postac("__POSTAC", "__POSTAC", "__postac.jpg", 1, 1, 1);
-	}
-	return __POSTAC;
-}
-*/
-
-public: static void dodajPostaæ(String^ key, Character^ character) {
+public: static void addCharacter(String^ key, Character^ character) {
 	CharacterS[key] = character;
 }
 
-public: static Character^ podajPostaæ(String^ key) {
+public: static Character^ getCharacter(String^ key) {
 	return CharacterS[key];
+}
+
+public: static characterMapType::iterator getStartIterator() {
+	return CharacterS->begin();
+}
+
+public: static characterMapType::iterator getEndIterator() {
+	return CharacterS->end();
 }
 
 };

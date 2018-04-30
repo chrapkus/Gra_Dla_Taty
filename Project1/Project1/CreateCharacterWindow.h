@@ -387,7 +387,7 @@ namespace Project1 {
 		HpLabel->Text = (p1->maxhealth).ToString();
 		DmgLabel->Text = (p1->damage).ToString();
 		pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
-		Character::dodajPostaæ("player", p1);
+		Character::addCharacter(nameOfCharacter, p1);
 	}
 		private: System::Void KnightButton_Click(System::Object^  sender, System::EventArgs^  e)
 		{
@@ -400,8 +400,8 @@ namespace Project1 {
 			p1->picture = "Knight.jpg"; // z jakiego powodu pomimo konstruktora wszystkie wartosci przujmuja wartosc 0 ...
 			HpLabel->Text = (p1->maxhealth).ToString();
 			DmgLabel->Text = (p1->damage).ToString();
-			pictureBox1->Image = Image::FromFile(p1->picture);// 
-			Character::dodajPostaæ("player", p1);
+			pictureBox1->Image = Image::FromFile(p1->picture);
+			Character::addCharacter(nameOfCharacter, p1);
 		}
 	
 	private: System::Void MagButton_Click(System::Object^  sender, System::EventArgs^  e) 
@@ -416,7 +416,7 @@ namespace Project1 {
 			this->HpLabel->Text = (p1->maxhealth).ToString();
 			DmgLabel->Text = (p1->damage).ToString();
 			pictureBox1->Image = Image::FromFile(p1->picture);// ta funkcja traktuje p1->picture jako puste ??? konstrukor zle dziala ???
-			Character::dodajPostaæ("player", p1);
+			Character::addCharacter( nameOfCharacter, p1);
 		}
 
 		private: System::Void listBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -435,7 +435,7 @@ private: System::Void CreateButton_Click(System::Object^  sender, System::EventA
 	//Project1::MyForm::zmiana();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	MessageBox::Show(Character::podajPostaæ( "player")->kimJestem());
+	MessageBox::Show(Character::getCharacter( "player")->whoAmI());
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	Game::FireViewChangeEvent(1);
