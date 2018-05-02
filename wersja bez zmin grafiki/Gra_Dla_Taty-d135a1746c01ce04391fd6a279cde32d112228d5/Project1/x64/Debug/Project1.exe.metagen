@@ -1,3 +1,5 @@
+  Project1.LoadGame.resources - Embedded, ContainedInManifestFile, 
+  Project1.Manu.resources - Embedded, ContainedInManifestFile, 
   Project1.MyForm.resources - Embedded, ContainedInManifestFile, 
   Project1.CreateCharacterWindow.resources - Embedded, ContainedInManifestFile, 
   Project1.FightWindow.resources - Embedded, ContainedInManifestFile, 
@@ -18,6 +20,14 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 	hash=None, flags=None
 Assembly Microsoft.VisualC.STLCLR, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
+Class Project1.LoadGame: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Project1.Manu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    ViewChangeHandler(Int32): PrivateScope, Public, HideBySig
 Class Project1.CreateCharacterWindow: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.UserControl
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

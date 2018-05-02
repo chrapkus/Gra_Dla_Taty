@@ -51,6 +51,12 @@
     <ClCompile Include="Werewolf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -87,6 +93,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Werewolf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Manu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

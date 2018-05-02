@@ -1,6 +1,8 @@
 #pragma once
 #include "FightWindow.h"
 #include "CreateCharacterWindow.h"
+#include "Manu.h"
+#include "LoadGame.h"
 namespace Project1 {
 
 	using namespace System;
@@ -40,6 +42,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  button3;
 	private: Project1::CreateCharacterWindow ^ userControl = (gcnew Project1::CreateCharacterWindow());
 	private: Project1::FightWindow ^ userControl1 = (gcnew Project1::FightWindow());
+	private: Project1::Manu^ MenuControl = (gcnew Project1::Manu());
+	private: Project1::LoadGame^ LoadGameControl = (gcnew Project1::LoadGame());
 
 			
 	protected:
@@ -60,7 +64,9 @@ namespace Project1 {
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->Controls->Add(userControl1);
+			this->panel1->Controls->Add(MenuControl);
 			this->panel1->Controls->Add(userControl);
+			this->panel1->Controls->Add(LoadGameControl);
 			userControl->BringToFront();
 
 			this->button1 = (gcnew System::Windows::Forms::Button());

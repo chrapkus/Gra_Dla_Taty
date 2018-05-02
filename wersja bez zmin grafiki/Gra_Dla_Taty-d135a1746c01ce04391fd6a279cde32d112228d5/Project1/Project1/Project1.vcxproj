@@ -138,7 +138,9 @@
     <ClCompile Include="Assasin.cpp" />
     <ClCompile Include="Dragon.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="LoadGame.cpp" />
     <ClCompile Include="Mag.cpp" />
+    <ClCompile Include="Manu.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="CreateCharacterWindow.cpp" />
     <ClCompile Include="FightWindow.cpp" />
@@ -152,7 +154,13 @@
     <ClInclude Include="Assasin.h" />
     <ClInclude Include="Dragon.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="LoadGame.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Mag.h" />
+    <ClInclude Include="Manu.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -169,6 +177,12 @@
     <ClInclude Include="Werewolf.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LoadGame.resx">
+      <DependentUpon>LoadGame.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manu.resx">
+      <DependentUpon>Manu.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
